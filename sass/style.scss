@@ -1,0 +1,167 @@
+/**
+ *
+ * @authors Ted Shiu (tedshd@gmail.com)
+ * @date    2014-06-05 23:41:37
+ * @version $Id$
+ */
+
+@import "compass";
+@import "compass/reset";
+
+// units
+.vertical-centering:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+// units End
+
+// init set
+$mastheadBg: #242424;
+$mastheadHeight: 50px;
+$logoOffsetX: 10px;
+$logoWidth: 100px;
+$logoHeight: 30px;
+$navigationHRColor: #fff;
+$navigationColor: #fff;
+$navigationMenuOffsetX: 0;
+$navigationMenuBtnBg: transparent;
+$navigationListOffsetX: 10px;
+$navigationListBg: #444;
+$navigationListBgHover: #555;
+
+
+// start
+#masthead {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: $mastheadBg;
+    * {
+        vertical-align: middle;
+        color: #fff;
+    }
+    #head-bar {
+        width: 100%;
+        height: $mastheadHeight;
+    }
+    #logo {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: $logoOffsetX;
+        margin-top: -$logoHeight/2;
+        width: $logoWidth;
+    }
+    #nav-menu-btn-area {
+        position: absolute;
+        top: 0;
+        right: $navigationMenuOffsetX;
+        width: $mastheadHeight;
+        height: $mastheadHeight;
+        #nav-menu-btn {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 30px;
+            height: 30px;
+            margin: auto;
+            background: $navigationMenuBtnBg;
+            .nav-switch-ico-bar {
+                width: 80%;
+                border-top: solid 2px;
+                margin: 6px auto 0 auto;
+            }
+        }
+    }
+    #nav-switch {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        right: $navigationMenuOffsetX;
+        width: $mastheadHeight;
+        height: $mastheadHeight;
+        margin: 0;
+        opacity: 0;
+        display: inline-block;
+        cursor: pointer;
+    }
+    #nav {
+        ul {
+            display: inline-block;
+            li {
+                background: $mastheadBg;
+                height: $mastheadHeight;
+                padding: 0 10px;
+                a {
+                    color: $navigationColor;
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen
+and (min-width : 641px) {
+    #masthead {
+        #nav-menu-btn-area {
+            display: none;
+        }
+        #nav {
+            position: absolute;
+            top: 0;
+            right: $navigationListOffsetX;
+            display: block !important;
+            ul {
+                li {
+                    float: left;
+                    display: inline-block;
+                    background: $navigationListBg;
+                    &:hover {
+                        background: $navigationListBgHover;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen
+and (max-width : 640px) {
+    #masthead {
+        #nav-switch:checked+#nav {
+            display: block;
+        }
+        #nav {
+            position: absolute;
+            top: $mastheadHeight;
+            left: 0;
+            width: 100%;
+            display: none;
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                width: 100%;
+                border-left: solid 10px $mastheadBg;
+                border-right: solid 10px $mastheadBg;
+                height: 1px;
+                background: $navigationHRColor;
+                @include box-sizing(border-box);
+            }
+            ul {
+                width: 100%;
+                li {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
