@@ -1,7 +1,7 @@
 header_responsive_navigation
 ============================
 
-## header navigatiob bar like bootstrap style
+### header navigatiob bar like bootstrap style
 
 It's a responsive navigation bar on header and it is flat style.
 
