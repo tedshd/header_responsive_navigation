@@ -13,6 +13,49 @@ It's a responsive navigation bar on header and it is flat style.
 * Use media query
 * Use grunt build custom style
 
+### Usage
+
+Add HTML code
+
+```html
+    <div id="masthead">
+        <div id="head-bar">
+            <a id="logo" href="">
+                <img src="" alt="logo" width="100" height="30">
+            </a>
+            <div id="nav-menu-btn-area">
+                <div id="nav-menu-btn">
+                    <div class="nav-switch-ico-bar"></div>
+                    <div class="nav-switch-ico-bar"></div>
+                    <div class="nav-switch-ico-bar"></div>
+                </div>
+            </div>
+        </div>
+        <div id="nav-menu">
+            <input id="nav-switch" type="checkbox">
+            <div id="nav">
+                <ul>
+                    <li class="vertical-centering">
+                        <a href="">About</a>
+                    </li>
+                    <li class="vertical-centering">
+                        <a href="">Product</a>
+                    </li>
+                    <li class="vertical-centering">
+                        <a href="">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+```
+
+Load CSS
+
+```html
+<link rel="stylesheet" href="css/style.css">
+```
+
 ### Principle
 
 Use input checkbox
