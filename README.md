@@ -13,6 +13,10 @@ It's a responsive navigation bar on header and it is flat style.
 * Use media query
 * Use grunt build custom style
 
+### Demo
+
+[Demo](http://tedshd.github.io/header_responsive_navigation/)
+
 ### Usage
 
 Add HTML code
