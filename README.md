@@ -69,3 +69,9 @@ Use input checkbox
 If checkbox checked show navigation
 
 Unchecked hide navigation
+
+### Tips
+
+If want use in IE8
+
+Must use [Respond.js](https://github.com/scottjehl/Respond)
